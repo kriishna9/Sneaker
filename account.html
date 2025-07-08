@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Lace UP</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800"
+    />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+      }
+      .menu-item {
+        transition: all 0.3s ease;
+      }
+      .menu-item:hover {
+        background-color: #2f352c;
+        border-radius: 9999px;
+      }
+    </style>
+  </head>
+  <body class="bg-[#141613] text-white min-h-screen flex flex-col">
+    <div class="flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-full md:w-80 bg-[#141613] p-4">
+        <div class="flex items-center gap-3 mb-8">
+          <a href="homepage.html">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6pUR-_R7jjs28DamuUf-2Fy48cEm2W_tY0VW-8z0N5i4s74St7axiPn3IQgH852iTOfh-JYQXVGQ2AaqqU1Zz-wCNmv7utX43Ni816jQuP3FsVlE0J_2yI3tDwphR6HChRFlYNGXKaK1GObOSDOOVNBmuKo0_-ZoHMErvPErs2MH2117q1Od7Na7IZTw2ybSI-6cZBDDzk1QVB07mXdnqQKdbTVYEofZDKXkmypn62sJeo2uW_OMLWISTjbTzgEMpkwcHvA95SPzM');
+              "
+            ></div>
+          </a>
+          <div>
+            <h1 class="text-base font-medium">Sophia</h1>
+            <p class="text-sm text-[#a8b2a3]">Member since 2021</p>
+          </div>
+        </div>
+        <!-- Navigation -->
+        <nav class="space-y-2">
+          <div
+            class="menu-item flex items-center gap-3 px-3 py-2 cursor-pointer"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 256 256">
+              <path
+                d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77Z"
+              />
+            </svg>
+            <a href="homepage.html"> <span class="text-sm font-medium">Home</span></a>
+          </div>
+          <div
+            class="menu-item flex items-center gap-3 px-3 py-2 cursor-pointer"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 256 256">
+              <path
+                d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"
+              />
+            </svg>
+            <span class="text-sm font-medium">Shop</span>
+          </div>
+          <!-- More nav items... -->
+        </nav>
+      </aside>
+
+      <!-- Main content -->
+      <main class="flex-1 p-6">
+        <h2 class="text-2xl font-bold mb-4">Settings</h2>
+        <section class="mb-6">
+          <h3 class="text-lg font-semibold mb-2">Account</h3>
+          <div class="space-y-3">
+            <div
+              class="bg-[#20241e] p-4 rounded-lg flex justify-between items-center"
+            >
+              <div>
+                <p class="font-medium">Email</p>
+                <p class="text-sm text-[#a8b2a3]">sophia123@email.com</p>
+              </div>
+              <span>&gt;</span>
+            </div>
+            <div
+              class="bg-[#20241e] p-4 rounded-lg flex justify-between items-center"
+            >
+              <div>
+                <p class="font-medium">Password</p>
+                <p class="text-sm text-[#a8b2a3]">•••••••••••</p>
+              </div>
+              <span>&gt;</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-6">
+          <h3 class="text-lg font-semibold mb-2">Preferences</h3>
+          <div class="space-y-3">
+            <!-- Language -->
+            <div
+              class="bg-[#20241e] p-4 rounded-lg"
+              onclick="toggleMenu('langMenu')"
+            >
+              <div class="flex justify-between items-center cursor-pointer">
+                <p>
+                  Language:
+                  <span class="text-[#a8b2a3]" id="selectedLang">English</span>
+                </p>
+                <span>&gt;</span>
+              </div>
+              <div
+                id="langMenu"
+                class="hidden mt-2 space-y-2 text-sm text-[#a8b2a3]"
+              >
+                <p onclick="selectOption('selectedLang', 'English')">English</p>
+                <p onclick="selectOption('selectedLang', 'Dutch')">Dutch</p>
+                <p onclick="selectOption('selectedLang', 'Japanese')">
+                  Japanese
+                </p>
+              </div>
+            </div>
+
+            <!-- Currency -->
+            <div
+              class="bg-[#20241e] p-4 rounded-lg"
+              onclick="toggleMenu('currencyMenu')"
+            >
+              <div class="flex justify-between items-center cursor-pointer">
+                <p>
+                  Currency:
+                  <span class="text-[#a8b2a3]" id="selectedCurrency">USD</span>
+                </p>
+                <span>&gt;</span>
+              </div>
+              <div
+                id="currencyMenu"
+                class="hidden mt-2 space-y-2 text-sm text-[#a8b2a3]"
+              >
+                <p onclick="selectOption('selectedCurrency', 'USD')">USD</p>
+                <p onclick="selectOption('selectedCurrency', 'EUR')">EUR</p>
+                <p onclick="selectOption('selectedCurrency', 'INR')">INR</p>
+              </div>
+            </div>
+
+            <!-- Theme -->
+            <div
+              class="bg-[#20241e] p-4 rounded-lg"
+              onclick="toggleMenu('themeMenu')"
+            >
+              <div class="flex justify-between items-center cursor-pointer">
+                <p>
+                  Theme:
+                  <span class="text-[#a8b2a3]" id="selectedTheme">Light</span>
+                </p>
+                <span>&gt;</span>
+              </div>
+              <div
+                id="themeMenu"
+                class="hidden mt-2 space-y-2 text-sm text-[#a8b2a3]"
+              >
+                <p onclick="selectOption('selectedTheme', 'Light')">Light</p>
+                <p onclick="selectOption('selectedTheme', 'Dark')">Dark</p>
+                <p onclick="selectOption('selectedTheme', 'System')">System</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-6">
+          <h3 class="text-lg font-semibold mb-2">Support</h3>
+          <div class="space-y-3">
+            <div
+              class="bg-[#20241e] p-4 rounded-lg flex justify-between items-center"
+            >
+              <p>Help Center</p>
+              <span>&gt;</span>
+            </div>
+            <div
+              class="bg-[#20241e] p-4 rounded-lg flex justify-between items-center"
+            >
+              <p>Contact Us</p>
+              <span>&gt;</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="pt-4">
+          <button
+            onclick="window.location.href='login.html'"
+            class="bg-[#2f352c] hover:bg-[#3d4537] text-white px-4 py-2 rounded-full font-bold transition"
+          >
+            Log Out
+          </button>
+        </div>
+      </main>
+    </div>
+    <script>
+      function toggleMenu(id) {
+        const menu = document.getElementById(id);
+        // Hide all other menus
+        document.querySelectorAll('[id$="Menu"]').forEach((el) => {
+          if (el.id !== id) el.classList.add("hidden");
+        });
+        // Toggle current
+        menu.classList.toggle("hidden");
+      }
+
+      function selectOption(spanId, value) {
+        document.getElementById(spanId).innerText = value;
+        // Close all menus after selection
+        document
+          .querySelectorAll('[id$="Menu"]')
+          .forEach((el) => el.classList.add("hidden"));
+      }
+
+      // Optional: Close menus when clicking outside
+      window.addEventListener("click", function (e) {
+        if (!e.target.closest(".rounded-lg")) {
+          document
+            .querySelectorAll('[id$="Menu"]')
+            .forEach((el) => el.classList.add("hidden"));
+        }
+      });
+    </script>
+  </body>
+</html>
